@@ -23,32 +23,19 @@ class Form extends React.Component {
     event.preventDefault();
   }
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+  render(){
+    return(
+      <div>
+    <h1> Let's see if the form works </h1>
+    <form onSubmit={this.handleSubmit}>
+     <input type="text" value={this.state.value} onChange={this.handleChange}/>
+     </form>
+     <button> Submit </button>
+     <h2> {this.state.value} </h2>
+      </div>
     );
   }
-}
 
-//   render(){
-//     return(
-//       <div>
-//     <h1> Let's see if the form works </h1>
-//     <form onSubmit={this.handleSubmit}>
-//      <input type="text" value={this.state.value} onChange={this.handleChange}/>
-//      </form>
-//      <button> Submit </button>
-//      <h2> {this.state.value} </h2>
-//       </div>
-//     );
-//   }
-//
-// }
+}
 
 export default Form;
