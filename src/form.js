@@ -19,7 +19,6 @@ class Form extends React.Component {
 
 
   handleSubmit(event) {
-     (this.state.value);
     event.preventDefault();
   }
 
@@ -31,7 +30,7 @@ class Form extends React.Component {
      <input type="text" value={this.state.value} onChange={this.handleChange}/>
      </form>
      <button> Submit </button>
-     <h2> {this.state.value} </h2>
+     <h2> {this.state.value.toUpperCase()} </h2>
       </div>
     );
   }
