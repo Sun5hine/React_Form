@@ -5,26 +5,33 @@ class Form extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      input: '',
-      messages: []
+      input: ''
     }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
-  handlesubmit(e) {
-   e.preventDefault();
-   this.setState ({input: e.target.value})
-}
+  handleChange(e){
+    this.setState ({input: e.target.value})
+  }
+
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
 
   render(){
     return(
       <div>
     <h1> Let's see if the form works </h1>
-    <form onSubmit={this.handlesubmit.bind(this)}>
-     <input type="text" placeholder="your name"/>
+    <form onSubmit={this.handleSubmit}>
+     <input type="text" value={this.state.value} onChange={this.handleChange}/>
      </form>
-     <button> Submit </button>
-
+     <input type="submit" />
+     <p> {this.state.input} </p>
       </div>
     );
   }
