@@ -8,8 +8,8 @@ class Form extends React.Component {
       value: ''
     }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
@@ -20,14 +20,15 @@ class Form extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log('done')
   }
 
   render(){
     return(
       <div>
     <h1> Let's see if the form works </h1>
-    <form onSubmit={this.handleSubmit}>
-     <input type="text" value={this.state.value} onChange={this.handleChange}/>
+    <form onSubmit={this.handleSubmit.bind(this)}>
+     <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)}/>
      </form>
      <button> Submit </button>
      <h2> {this.state.value.toUpperCase()} </h2>
